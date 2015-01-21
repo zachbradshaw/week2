@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Title</title>
+  <link rel="stylesheet" href=css/main.css>
+
+</head>
+
+<body>
+
+  <div class="converter-header">
+
+    <h1>Coooool Converters</h1>
+
+  </div>
+
+  <div class="converter-container">
+
+    <div class="converter__cups-quarts">
+
+      <h1>Cups to Quarts/Quarts to Cups</h1>
+
+      <label>Convert cups to quarts:</label>
+      <input type="text" placeholder="Enter number of cups here"
+        onchange="setCupValue(this.value)">
+      <button onclick="convertCup()">Convert</button>
+      <br>
+      <label>Convert quarts to cups:</label>
+      <input type="text" placeholder="Enter number of quarts here"
+        onchange="setQuartValue(this.value)">
+      <button onclick="convertQuart()">Convert</button>
+
+    </div>
+
+    <div class="converter__meters-yards">
+
+      <h1>Meters to Yards/Yards to Meters</h1>
+
+      <label>Convert meters to yards:</label>
+      <input type="text" placeholder="Enter number of meters here"
+        onchange="setMeterValue(this.value)">
+      <button onclick="convertMeter()">Convert</button>
+      <br>
+      <label>Convert yards to meters:</label>
+      <input type="text" placeholder="Enter number of yards here"
+        onchange="setYardValue(this.value)">
+      <button onclick="convertYard()">Convert</button>
+
+    </div>
+
+    <div class="converter__fahr-cel">
+
+      <h1>Fahrenheit to Celsius/Celsius to Fahrenheit</h1>
+
+      <label>Convert Fahrenheit to Celsius:</label>
+      <input type="text" placeholder="Enter temperature here"
+        onchange="setFahrValue(this.value)">
+      <button onclick="convertFahr()">Convert</button>
+      <br>
+      <label>Convert Celsius to Fahrenheit:</label>
+      <input type="text" placeholder="Enter temperature here"
+        onchange="setCelValue(this.value)">
+      <button onclick="convertCel()">Convert</button>
+
+    </div>
+
+  </div>
+
+  <script src="js/converter.js"></script>
+
+</body>
+
+</html>
