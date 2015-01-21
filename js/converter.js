@@ -1,7 +1,7 @@
 var cupValue = 0,
     quartValue = 0,
     meterValue = 0,
-    yardValue = 0,
+    footValue = 0,
     fahrValue = 0,
     celValue = 0;
 
@@ -16,11 +16,11 @@ function convertQuart() {
 
 // functions for meter and yard conversions
 function convertMeter() {
-  alert(meterValue + " meter(s) is equal to " + meterValue * 1.09361 + " yard(s)!");
+  alert(meterValue + " meter(s) is equal to " + meterValue * 3.28084 + " feet!");
 }
 
-function convertYard() {
-  alert(yardValue + " yard(s) is equal to " + yardValue * 0.9144) + " meter(s)!";
+function convertFoot() {
+  alert(footValue + " feet is equal to " + footValue * 0.3048 + " meter(s)");
 }
 
 // functions for temperature conversions
@@ -46,8 +46,8 @@ function setMeterValue(meterValueString) {
   meterValue = Number(meterValueString);
 }
 
-function setYardValue(yardValueString) {
-  yardValue = Number(yardValueString);
+function setFootValue(footValueString) {
+  footValue = Number(footValueString);
 }
 
 function setFahrValue(fahrValueString) {
