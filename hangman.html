@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>I just want to Hang, man.</title>
+  <link rel="stylesheet" href="css/hangman.css">
+
+</head>
+
+<body>
+
+  <div class="hangman-container">
+
+    <span class="turns-left">
+
+      Turns: <span class="turn-counter"></span>
+
+    </span>
+    <br>
+    <h2 class="dash-display">
+
+    </h2>
+
+    <input type="text" onchange="setGuess(this.value)" maxlength="1">
+    <button class="guessButton" onclick="checkGuess()">Guess!</button>
+
+  </div>
+
+  <script src="js/hangman-words.js"></script>
+</body>
+
+</html>
