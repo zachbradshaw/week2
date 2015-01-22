@@ -43,7 +43,7 @@ function convertCel() {
   // + " degree(s) Fahrenheit");
   document.querySelector('.cel-value').textContent = celValue +
   " degree(s) Celsius is equal to " + ((celValue * 9) / 5 + 32)
-  + " degree(s) Fahrenheit"
+  + " degree(s) Fahrenheit";
 }
 
 function setCupValue(cupValueString) {
