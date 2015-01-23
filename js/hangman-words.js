@@ -101,13 +101,13 @@ function checkGuess() {
   }
     if (correct === false) {
       turnCount = --turnCount;
-      prevLetters.push(guessValue);
+      // prevLetters.push(guessValue);
     }
 
   finalDisplay = dashedWord.join(' ');
   document.querySelector('.dash-display').textContent = finalDisplay;
   document.querySelector('.turn-counter').textContent = "You have " + turnCount + " turn(s) left before this dude gets hanged...no pressure.";
-  document.querySelector('.prev-letters').textContent = prevLetters;
+  // document.querySelector('.prev-letters').textContent = prevLetters;
 
 }
 
