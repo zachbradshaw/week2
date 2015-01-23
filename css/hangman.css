@@ -1,17 +1,17 @@
 /* Reasonable defaults */
 body {
-    font-family: sans-serif;
+    font-family: 'Droid Sans';
     line-height: 1.4em;
     background: #F5F5F5;
     color: #444;
-    padding: 2em;
+    /*padding: 2em;*/
 }
 
-h1 { font-size: 2em; margin: .67em 0 }
-h2 { font-size: 1.5em; margin: .75em 0 }
-h3 { font-size: 1.17em; margin: .83em 0 }
-h5 { font-size: .83em; margin: 1.5em 0 }
-h6 { font-size: .75em; margin: 1.67em 0 }
+h1 { font-size:    4em; margin:  .67em 0 }
+h2 { font-size:  1.5em; margin:  .75em 0 }
+h3 { font-size: 1.17em; margin:  .83em 0 }
+h5 { font-size: m.83em; margin:  1.5em 0 }
+h6 { font-size: m.75em; margin: 1.67em 0 }
 h1, h2, h3, h4,
 h5, h6 {
   font-weight: bolder
@@ -33,7 +33,7 @@ button, input, select, textarea {
 }
 
 button {
-  padding: 0.5em 1em;
+  padding: 0.55em 1em;
   background: #2694f5;
   color: white;
   border: 0;
