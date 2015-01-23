@@ -11,31 +11,29 @@ var hangmanWords = [
 "who","oil","its","now","find","long","down","day","did","get",
 "come","made","may","part"
 ];
+var incorrectResult = [];
 
 // setting variables
 var userLetter;
-
-var prevLetters = userLetter;
-
-var validWords = hangmanWords.filter(wordLength);
-
-var gameWord = getRandomWord();
 
 var turnCount = 6;
 
 var gameMessage = "You have " + turnCount + " turn(s) left before this dude gets hanged...no pressure.";
 
+var validWords = hangmanWords.filter(wordLength);
+
+var gameWord = getRandomWord();
 // turns gameWord into an array so its letters can be indexed
 var displayWord = gameWord.split('');
-
 // re"maps" the gameWord array and replaces it with underscore dashes
 var dashedWord = displayWord.map(function (ch){
   return '_';
 });
-
 // takes dashedWord array, turns it into a string, and prepares it to be
 // inserted into the DOM
 var finalDisplay = dashedWord.join(' ');
+
+var textClear = document.querySelector('.game-input');
 
 // function that filters out all words in the hangmanWords variable
 // that are shorter than three letters
@@ -50,13 +48,31 @@ function getRandomWord() {
 }
 
 // inserts finalDisplay into the DOM
-document.querySelector('.dash-display').textContent = finalDisplay;
-document.querySelector('.turn-counter').textContent = gameMessage;
+var updateLetter = function() {
+  document.querySelector('.dash-display').textContent = finalDisplay;
+}
+
+updateLetter();
+
+var updateTurn = function() {
+  if (turnCount >= 1) {
+    document.querySelector('.turn-counter').textContent = "You have " + turnCount + " turns left before this dude gets hanged...no pressure.";
+  }
+  else if (turnCount === 1) {
+    document.querySelector('.turn-counter').textContent = "You have " + turnCount + " turn left! This guy is a goner!";
+  }
+  else {
+    document.querySelector('.turn-counter').textContent = "Game over...and a guy died...maybe we should play a different game.";
+  }
+}
+
+updateTurn();
 
 // Assigns the value (or letter) of the user's guess to userLetter, which was
 // previously undefined.
 function setGuess(guessValue) {
   userLetter = guessValue;
+  // userLetter.value = "";
 }
 
 // the big one:
@@ -97,21 +113,22 @@ function checkGuess() {
     if (userLetter === displayWord[i]) {
       dashedWord[i] = userLetter;
       correct = true;
+      textClear.value = "";
     }
   }
     if (correct === false) {
       turnCount = --turnCount;
-      // prevLetters.push(guessValue);
+      var incorrectLetter = userLetter;
+      // var spacedWrongLetter = incorrectResult.join(', ');
+      incorrectResult.push(' ' + incorrectLetter);
+      document.querySelector('.prev-letters').textContent = incorrectResult;
+      textClear.value = "";
     }
 
   finalDisplay = dashedWord.join(' ');
-  document.querySelector('.dash-display').textContent = finalDisplay;
-  document.querySelector('.turn-counter').textContent = "You have " + turnCount + " turn(s) left before this dude gets hanged...no pressure.";
-  // document.querySelector('.prev-letters').textContent = prevLetters;
-
+  updateLetter();
+  updateTurn();
 }
-
-
 
 console.log(gameWord);
 console.log(turnCount);

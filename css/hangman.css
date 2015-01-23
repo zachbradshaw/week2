@@ -7,7 +7,7 @@ body {
     /*padding: 2em;*/
 }
 
-h1 { font-size:    4em; margin:  .67em 0 }
+h1 { font-size:    7vw; margin:  .67em 0 }
 h2 { font-size:  1.5em; margin:  .75em 0 }
 h3 { font-size: 1.17em; margin:  .83em 0 }
 h5 { font-size: m.83em; margin:  1.5em 0 }
@@ -42,4 +42,18 @@ button {
 input {
   padding: 0.5em;
   border: 1px solid #999;
+}
+
+.game-header {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.prev-letters {
+  color: red;
+  display: inline;
+}
+
+.prev-guesses {
+  display: inline;
 }
