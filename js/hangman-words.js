@@ -72,7 +72,6 @@ updateTurn();
 // previously undefined.
 function setGuess(guessValue) {
   userLetter = guessValue;
-  // userLetter.value = "";
 }
 
 // the big one:
@@ -111,7 +110,7 @@ function checkGuess() {
 
   for (i = 0; i < gameWord.length; i++) {
     if (userLetter === displayWord[i]) {
-      dashedWord[i] = userLetter;
+      dashedWord[i] = userLetter.toUpperCase();
       correct = true;
       textClear.value = "";
     }
@@ -120,7 +119,7 @@ function checkGuess() {
       turnCount = --turnCount;
       var incorrectLetter = userLetter;
       // var spacedWrongLetter = incorrectResult.join(', ');
-      incorrectResult.push(' ' + incorrectLetter);
+      incorrectResult.push(' ' + incorrectLetter.toUpperCase());
       document.querySelector('.prev-letters').textContent = incorrectResult;
       textClear.value = "";
     }

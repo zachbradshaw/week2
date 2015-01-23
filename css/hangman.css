@@ -2,9 +2,11 @@
 body {
     font-family: 'Droid Sans';
     line-height: 1.4em;
-    background: #F5F5F5;
-    color: #444;
-    /*padding: 2em;*/
+    background: #373130;
+    background-image: url(http://i.imgur.com/sgcWWF1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #dfdfdf;
 }
 
 h1 { font-size:    7vw; margin:  .67em 0 }
@@ -33,15 +35,19 @@ button, input, select, textarea {
 }
 
 button {
-  padding: 0.55em 1em;
+  padding: 0.5em 1em;
   background: #2694f5;
   color: white;
-  border: 0;
+  border: transparent;
+  border-top-right-radius: .25em;
+  border-bottom-right-radius: .25em;
 }
 
 input {
   padding: 0.5em;
-  border: 1px solid #999;
+  border: transparent;
+  border-top-left-radius: .25em;
+  border-bottom-left-radius: .25em;
 }
 
 .game-header {
@@ -56,4 +62,14 @@ input {
 
 .prev-guesses {
   display: inline;
+}
+
+.hangman-container {
+  width: 100%;
+  text-align: center;
+}
+
+.dash-display {
+  font-size: 5em;
+  margin: 1em;
 }
