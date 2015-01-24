@@ -8,6 +8,7 @@
   <title>I just want to Hang, man.</title>
   <link rel="stylesheet" href="css/hangman.css">
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -32,7 +33,7 @@
     </h2>
 
       <input class="game-input" type="text" onchange="setGuess(this.value)" maxlength="1"><button
-      class="guessButton" onclick="checkGuess()">Guess!</button>
+      id="guess-button" onclick="checkGuess()">Guess!</button>
 
     <br>
     <br>
@@ -44,7 +45,11 @@
 
   </div>
 
-  <script src="js/hangman-words.js"></script>
+  <div class="graphic-container">
+
+  </div>
+
+  <script src="js/hangman.js"></script>
 </body>
 
 </html>

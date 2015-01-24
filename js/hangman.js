@@ -55,7 +55,7 @@ var updateLetter = function() {
 updateLetter();
 
 var updateTurn = function() {
-  if (turnCount >= 1) {
+  if (turnCount >= 2) {
     document.querySelector('.turn-counter').textContent = "You have " + turnCount + " turns left before this dude gets hanged...no pressure.";
   }
   else if (turnCount === 1) {
@@ -114,11 +114,13 @@ function checkGuess() {
       correct = true;
       textClear.value = "";
     }
+    else if (turnCount === 1) {
+      dashedWord[i] = gameWord[i].toUpperCase();
+    }
   }
     if (correct === false) {
       turnCount = --turnCount;
       var incorrectLetter = userLetter;
-      // var spacedWrongLetter = incorrectResult.join(', ');
       incorrectResult.push(' ' + incorrectLetter.toUpperCase());
       document.querySelector('.prev-letters').textContent = incorrectResult;
       textClear.value = "";
