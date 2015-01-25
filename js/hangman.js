@@ -35,6 +35,25 @@ var finalDisplay = dashedWord.join(' ');
 
 var textClear = document.querySelector('.game-input');
 
+function showImage(element) {
+  var elem = document.getElementById(element);
+  elem.style.transition = "visibility 0.5s ease-in 0s";
+  elem.style.visibility = visible;
+}
+
+// function slideLeft(id) {
+//   var elem = document.getElementById(id);
+//   elem.style.transform =
+// }
+
+
+
+
+
+
+
+
+
 // function that filters out all words in the hangmanWords variable
 // that are shorter than three letters
 function wordLength(word) {
@@ -56,7 +75,7 @@ updateLetter();
 
 var updateTurn = function() {
   if (turnCount >= 2) {
-    document.querySelector('.turn-counter').textContent = "You have " + turnCount + " turns left before this dude gets hanged...no pressure.";
+    document.querySelector('.turn-counter').textContent = "You have " + turnCount + " turns left before this guy gets hanged...no pressure.";
   }
   else if (turnCount === 1) {
     document.querySelector('.turn-counter').textContent = "You have " + turnCount + " turn left! This guy is a goner!";

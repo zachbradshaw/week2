@@ -34,6 +34,11 @@ button, input, select, textarea {
   outline: none;
 }
 
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 #guess-button {
   padding: 0.5em 1em;
   background: transparent;
@@ -67,19 +72,75 @@ input {
   display: inline;
 }
 
-.hangman-container {
+#hangman-container {
   width: 35em;
   text-align: center;
-  border: 1px solid white;
   float: left;
-  padding: 2em;
+  padding: 2.5em 0 2.5em 7em;
 }
 
 .dash-display {
   font-size: 5em;
-  margin: 1em;
+  /*margin: 1em;*/
 }
 
 .turn-counter {
-  margin: 1em;
+  padding-top: 2em;
+  line-height: 1.4em;
+  width: 18em;
+  margin: auto;
+}
+
+.graphic-container {
+  position: relative;
+  margin-right: 5em;
+}
+
+#gallow {
+  max-height: 500px;
+  max-width: 500px;
+  position: absolute;
+  visibility: hidden;
+  right: 5.7em;
+}
+
+#gallow,
+#head,
+#body,
+#arm1,
+#arm2,
+#leg1,
+#leg2 {
+  position: absolute;
+  visibility: hidden;
+}
+
+#head {
+  top: 7em;
+  left: 43em;
+}
+
+#body {
+  top: 12.5em;
+  left: 46em;
+}
+
+#arm1 {
+  top: 13em;
+  left: 46em;
+}
+
+#arm2 {
+  top: 13.2em;
+  left: 40em;
+}
+
+#leg1 {
+  top: 18.75em;
+  left: 41.75em;
+}
+
+#leg2 {
+  top: 18.7em;
+  left: 46.1em;
 }
