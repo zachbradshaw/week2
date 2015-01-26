@@ -100,11 +100,10 @@ input {
   max-height: 500px;
   max-width: 500px;
   position: absolute;
-  visibility: hidden;
   right: 5.7em;
+  opacity: 0;
 }
 
-#gallow,
 #head,
 #body,
 #arm1,
@@ -112,7 +111,7 @@ input {
 #leg1,
 #leg2 {
   position: absolute;
-  visibility: hidden;
+  opacity: 0;
 }
 
 #head {

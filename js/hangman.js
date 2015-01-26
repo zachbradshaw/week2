@@ -16,7 +16,7 @@ var incorrectResult = [];
 // setting variables
 var userLetter;
 
-var turnCount = 6;
+var turnCount = 7;
 
 var gameMessage = "You have " + turnCount + " turn(s) left before this dude gets hanged...no pressure.";
 
@@ -34,25 +34,6 @@ var dashedWord = displayWord.map(function (ch){
 var finalDisplay = dashedWord.join(' ');
 
 var textClear = document.querySelector('.game-input');
-
-function showImage(element) {
-  var elem = document.getElementById(element);
-  elem.style.transition = "visibility 0.5s ease-in 0s";
-  elem.style.visibility = visible;
-}
-
-// function slideLeft(id) {
-//   var elem = document.getElementById(id);
-//   elem.style.transform =
-// }
-
-
-
-
-
-
-
-
 
 // function that filters out all words in the hangmanWords variable
 // that are shorter than three letters
@@ -93,6 +74,38 @@ function setGuess(guessValue) {
   userLetter = guessValue;
 }
 
+function revealHangman(id) {
+  var elem = document.getElementById(id);
+  elem.style.transition = "opacity .1s ease-in 0s";
+  elem.style.opacity = 1;
+}
+
+function animateHangman() {
+  if (turnCount === 6) {
+    revealHangman('gallow');
+  }
+  else if (turnCount === 5) {
+    revealHangman('head');
+  }
+  else if (turnCount === 4) {
+    revealHangman('body');
+  }
+  else if (turnCount === 3) {
+    revealHangman('arm1');
+  }
+  else if (turnCount === 2) {
+    revealHangman('arm2');
+  }
+  else if (turnCount === 1) {
+    revealHangman('leg1');
+  }
+  else if (turnCount === 0) {
+    revealHangman('leg2');
+  }
+}
+
+revealHangman();
+animateHangman();
 // the big one:
 // checkGuess is the function that powers hangman.
 //
@@ -135,6 +148,7 @@ function checkGuess() {
     }
     else if (turnCount === 1) {
       dashedWord[i] = gameWord[i].toUpperCase();
+      document.querySelector('.play-again').textContent = "Play again";
     }
   }
     if (correct === false) {
@@ -146,6 +160,7 @@ function checkGuess() {
     }
 
   finalDisplay = dashedWord.join(' ');
+  animateHangman();
   updateLetter();
   updateTurn();
 }
