@@ -74,6 +74,9 @@ function setGuess(guessValue) {
   userLetter = guessValue;
 }
 
+// These two functions reveal the hangman png pieces that are set to an
+// opacity of 0 in my CSS file. The functions are called within the checkGuess
+// function lower in the js file.
 function revealHangman(id) {
   var elem = document.getElementById(id);
   elem.style.transition = "opacity .1s ease-in 0s";
